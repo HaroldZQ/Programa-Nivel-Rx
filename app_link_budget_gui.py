@@ -57,7 +57,7 @@ class LinkBudgetApp:
         lbl_title = tk.Label(header_frame, text="APU SPACE // MISSION CONTROL", 
                      font=("Consolas", 15, "bold"), fg="#F7B955", bg="#07111F")
         lbl_title.pack()
-        lbl_sub = tk.Label(header_frame, text="FLIGHT TELEMETRY  /  LoRa 433 MHz  /  OPENROCKET", 
+        lbl_sub = tk.Label(header_frame, text="FLIGHT TELEMETRY  /  APU SPACE  /  OPEN ROCKET", 
                    font=("Consolas", 9), fg="#6EDFF6", bg="#07111F")
         lbl_sub.pack()
 
@@ -291,7 +291,7 @@ class LinkBudgetApp:
         cbar = plt.colorbar(sc, ax=ax4, pad=0.02)
         cbar.set_label("Nivel de Señal $P_{rx}$ (dBm)", fontsize=10, fontweight="bold")
         ax4.set_title("Trayectoria 2D con Atenuación de Señal LoRa", fontsize=12, fontweight="bold", color="#1E293B", pad=10)
-        ax4.set_xlabel("Deriva Lateral desde la Rampa (m)", fontsize=10, fontweight="bold")
+        ax4.set_xlabel("Distancia Lateral desde la Rampa (m)", fontsize=10, fontweight="bold")
         ax4.set_ylabel("Altitud (m)", fontsize=10, fontweight="bold")
         ax4.grid(True, linestyle="--", alpha=0.55)
 
@@ -410,16 +410,22 @@ class LinkBudgetApp:
                 "position": 0.405,
             }
         )
-        fig.update_xaxes(title_text="Deriva lateral (m)", row=2, col=2)
+        fig.update_xaxes(title_text="Distancia lateral (m)", row=2, col=2)
         fig.update_yaxes(title_text="Altitud (m)", row=2, col=2)
         fig.update_layout(
-            title="TELEMETRÍA Y LINK BUDGET ROCKET APU SPACE",
+            title={
+                "text": "TELEMETRÍA Y LINK BUDGET ROCKET APU SPACE",
+                "x": 0.5,
+                "xanchor": "center",
+                "y": 0.97,
+                "yanchor": "top",
+            },
             template="plotly_dark", height=850, width=1400,
             paper_bgcolor="#07111F", plot_bgcolor="#0B1A2A",
             font={"family": "Consolas, monospace", "color": "#D8E7F2", "size": 12},
-            title_font={"family": "Consolas, monospace", "color": "#F7B955", "size": 20},
+            title_font={"family": "Consolas, monospace", "color": "#F7B955", "size": 26},
             hovermode="closest", legend={"orientation": "h", "y": -0.08, "font": {"color": "#D8E7F2"}},
-            margin={"l": 115, "r": 145, "t": 90, "b": 80},
+            margin={"l": 115, "r": 145, "t": 125, "b": 80},
         )
         fig.update_xaxes(
             showline=True, linecolor="#31556B", linewidth=1,
@@ -433,8 +439,8 @@ class LinkBudgetApp:
         )
         fig.add_annotation(
             text="● LIVE TELEMETRY  //  FLIGHT DATA ANALYSIS",
-            x=0, y=1.07, xref="paper", yref="paper", showarrow=False,
-            xanchor="left", font={"family": "Consolas, monospace", "size": 11, "color": "#6EDFF6"},
+            x=0.5, y=1.045, xref="paper", yref="paper", showarrow=False,
+            xanchor="center", font={"family": "Consolas, monospace", "size": 12, "color": "#6EDFF6"},
         )
         fig.write_html(
             filename,
