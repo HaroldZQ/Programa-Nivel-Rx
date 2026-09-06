@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+build/
+dist/
+*.csv
+*_LinkBudget_Calculado.xlsx
+*_Dashboard_Graficas.png
+*_Dashboard_Graficas_Interactivo.html
