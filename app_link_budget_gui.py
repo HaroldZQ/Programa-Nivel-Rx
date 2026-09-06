@@ -424,7 +424,15 @@ class LinkBudgetApp:
             paper_bgcolor="#07111F", plot_bgcolor="#0B1A2A",
             font={"family": "Consolas, monospace", "color": "#D8E7F2", "size": 12},
             title_font={"family": "Consolas, monospace", "color": "#F7B955", "size": 26},
-            hovermode="closest", legend={"orientation": "h", "y": -0.08, "font": {"color": "#D8E7F2"}},
+            hovermode="closest",
+            legend={
+                "orientation": "h",
+                "x": 0.5,
+                "xanchor": "center",
+                "y": -0.08,
+                "yanchor": "top",
+                "font": {"color": "#D8E7F2"},
+            },
             margin={"l": 115, "r": 145, "t": 125, "b": 80},
         )
         fig.update_xaxes(
@@ -439,8 +447,8 @@ class LinkBudgetApp:
         )
         fig.add_annotation(
             text="● LIVE TELEMETRY  //  FLIGHT DATA ANALYSIS",
-            x=0.5, y=1.045, xref="paper", yref="paper", showarrow=False,
-            xanchor="center", font={"family": "Consolas, monospace", "size": 12, "color": "#6EDFF6"},
+            x=0.5, y=1.098, xref="paper", yref="paper", showarrow=False,
+            xanchor="center", font={"family": "Consolas, monospace", "size": 20, "color": "#6EDFF6"},
         )
         fig.write_html(
             filename,
