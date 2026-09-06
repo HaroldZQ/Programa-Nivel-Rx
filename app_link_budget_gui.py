@@ -23,16 +23,16 @@ class LinkBudgetApp:
         # Style
         self.style = ttk.Style()
         self.style.theme_use("clam")
-        self.style.configure("TLabel", background="#0B1726", foreground="#D8E7F2")
-        self.style.configure("TLabelFrame", background="#0B1726", foreground="#F7B955")
-        self.style.configure("TFrame", background="#0B1726")
+        self.style.configure("TLabel", background="#D7D9DC", foreground="#26313A")
+        self.style.configure("TLabelFrame", background="#D7D9DC", foreground="#59636C")
+        self.style.configure("TFrame", background="#D7D9DC")
         self.style.configure(
             "Mission.TEntry",
-            fieldbackground="#252B33",
-            foreground="#F2F4F7",
-            bordercolor="#B8893D",
-            lightcolor="#B8893D",
-            darkcolor="#151A20",
+            fieldbackground="#F4F5F6",
+            foreground="#26313A",
+            bordercolor="#8A949C",
+            lightcolor="#FFFFFF",
+            darkcolor="#737D85",
         )
 
         # Variables
