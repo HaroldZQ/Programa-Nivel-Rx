@@ -330,11 +330,21 @@ class LinkBudgetApp:
             x=time, y=prx, mode="lines", name="Prx (dBm)",
             line={"color": "#D9381E", "width": 2}, text=hover_text,
             hovertemplate="%{text}<extra></extra>",
+            hoverlabel={
+                "bgcolor": "#174B5B",
+                "bordercolor": "#6EDFF6",
+                "font": {"family": "Consolas, monospace", "color": "#F2FAFF", "size": 12},
+            },
         ), row=1, col=1)
         fig.add_trace(go.Scatter(
             x=[t_ap], y=[prx_ap], mode="markers", name="Apogeo",
             marker={"color": "#1F4E78", "size": 10},
             hovertemplate=f"Apogeo<br>Tiempo: {t_ap:.2f} s<br>Prx: {prx_ap:.2f} dBm<extra></extra>",
+            hoverlabel={
+                "bgcolor": "#174B5B",
+                "bordercolor": "#6EDFF6",
+                "font": {"family": "Consolas, monospace", "color": "#F2FAFF", "size": 12},
+            },
         ), row=1, col=1)
 
         fig.add_trace(go.Scatter(
@@ -408,11 +418,6 @@ class LinkBudgetApp:
             paper_bgcolor="#07111F", plot_bgcolor="#0B1A2A",
             font={"family": "Consolas, monospace", "color": "#D8E7F2", "size": 12},
             title_font={"family": "Consolas, monospace", "color": "#F7B955", "size": 20},
-            hoverlabel={
-                "bgcolor": "#174B5B",
-                "bordercolor": "#6EDFF6",
-                "font": {"family": "Consolas, monospace", "color": "#F2FAFF", "size": 12},
-            },
             hovermode="closest", legend={"orientation": "h", "y": -0.08, "font": {"color": "#D8E7F2"}},
             margin={"l": 115, "r": 145, "t": 90, "b": 80},
         )
